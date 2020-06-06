@@ -1,0 +1,10 @@
+# Getting Started
+- https://www.youtube.com/user/TheCharmefis (This guy has fantastic tutorials for beginners with Web Dev stuff)
+- https://www.w3schools.com/ (Tons of resources on many topics)
+- https://theodinproject.com (Full stack curriculum for beginners)
+- https://css-tricks.com/ (Great articles on styling from basics to advanced)
+- https://developer.mozilla.org/en-US/docs/Learn (Similar to w3schools)
+- https://flexboxfroggy.com/ (Learn flexbox as a game)
+- https://grasshopper.app/ (Coding app for beginners)
+- https://www.youtube.com/channel/UCrqAGUPPMOdo0jfQ6grikZw (Good teacher for front-end web dev)
+- https://github.com/kamranahmedse/developer-roadmap (Roadmap to becoming a web developer)
