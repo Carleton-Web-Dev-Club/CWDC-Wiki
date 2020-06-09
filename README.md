@@ -11,3 +11,5 @@
 [General](https://github.com/Carleton-Web-Dev-Club/CWDC-Wiki/blob/master/General-Resources.md)
 
 [Useful APIs](https://github.com/Carleton-Web-Dev-Club/CWDC-Wiki/blob/master/Useful-APIs.md)
+
+[Club Site](https://github.com/Carleton-Web-Dev-Club/CWDC-Wiki/blob/master/Club-Site.md)
