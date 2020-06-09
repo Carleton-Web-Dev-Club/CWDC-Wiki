@@ -10,4 +10,4 @@ Having an interlinking history of members and projects could also be useful. Thi
 - Calendar including day/time/info for different events, ways for members to create/edit their own events
 - Wiki integration to include the wiki currently hosted at https://github.com/Carleton-Web-Dev-Club/CWDC-Wiki or to provide a similar service (e.g., by hosting our own wiki software)
 - Blog integration to allow members to post tutorials, projects, etc.
-- Club data API to support creation of alternate clients
+- [Club data API](./api/discussion.adoc) to support creation of alternate clients
