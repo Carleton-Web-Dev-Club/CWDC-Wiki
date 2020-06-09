@@ -1,0 +1,76 @@
+# Club Data API
+
+Following outlines routes and endpoints for each that can be offered by Club-data-API v1 
+
+#### Blog
+[%collapsible]
+.Possible endpoints
+====
+* Author
+* Co-author?
+* Category
+* Content
+* Date published
+* Date updated
+* Language
+* Published status
+* Tags
+* Title
+====
+[%collapsible]
+
+#### Events
+[%collapsible]
+.Possible endpoints
+====
+* Date and Time
+** Start
+** End
+* Description
+* Organizer
+* Location
+* Title
+====
+[%collapsible]
+
+#### Projects
+[%collapsible]
+.Possible endpoints
+====
+* Contributors
+* Created date
+* Description
+* Name
+* Status
+====
+[%collapsible]
+
+#### Users
+[%collapsible]
+.Possible endpoints
+====
+* Name 
+* Users
+* Email
+* Role
+* Social accounts
+** Github
+** Discord
+** Steam
+** Twitch
+** Reddit 
+** Twitter
+** Facebook
+** Instagram
+** Website
+** LinkedIn
+** Indeed
+* Organization
+* Profile avatar
+====
+[%collapsible]
+
+
+NOTE: These are just suggestion. All items may or may not be implemented in the initial release.
+
+Join the Discord Channel https://discord.gg/8pJS4zk[#club-site-apigroup] to discuss more.
