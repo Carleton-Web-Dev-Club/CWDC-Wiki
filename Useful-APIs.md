@@ -4,3 +4,6 @@
 - https://develop.battle.net/documentation/hearthstone/game-data-apis (Hearthstone Game Data API)
 - https://superheroapi.com/ (Super hero data API)
 - https://sv443.net/jokeapi/v2/ (Joke API)
+
+# GitHub List of Public APIs
+- https://github.com/public-apis/public-apis (extensive list of publically available APIs)
