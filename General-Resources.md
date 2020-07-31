@@ -1,5 +1,6 @@
 # General Resources
 - https://free-for.dev/ (Compilation of free services for developers)
+- https://books.goalkicker.com/ Goal Kicker free programming books
 
 ## Shareable IDEs
 - https://jsfiddle.net/ for frontend only coding.
