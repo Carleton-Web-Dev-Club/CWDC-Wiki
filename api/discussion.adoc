@@ -30,6 +30,7 @@ Following outlines routes and endpoints for each that can be offered by Club-dat
 * Organizer
 * Location
 * Title
+* Attendees
 ====
 [%collapsible]
 
@@ -39,6 +40,7 @@ Following outlines routes and endpoints for each that can be offered by Club-dat
 ====
 * Contributors
 * Created date
+* Updated date (with github hooks?)
 * Description
 * Name
 * Status
