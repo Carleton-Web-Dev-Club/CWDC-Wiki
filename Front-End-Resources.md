@@ -4,3 +4,4 @@
 - http://codingheroes.io/resources/ (Resources for Building Beautiful Websites with HTML, CSS and JavaScript)
 - https://www.theodinproject.com/ (A free course on becoming a web developer, JS/HTML/CSS/Ruby/GIT/Node resources)
 - https://developers.google.com/web/tools/lighthouse/ (An automated tool for auditing performance, accessibility, progressive web apps, SEO and more)
+- https://material.io/resources/color/ (A colour palette selection tool that also checks accessibility)
