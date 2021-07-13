@@ -20,7 +20,7 @@ Verify that typing `ssh` shows some text about usage.
 First, try to connect to the SCS access gateway. This is our way into the carleton network. Run `ssh $mc1username@scs.access.carleton.ca`, replacing `$mc1username` with your mc1 username. The password will be either your mc1 one, or whatever you set while creating your scs account.
 
 ### Connecting to CWDC Servers
-Next, we can try to connect via the CWDC jump host. See the table under [network topology](../../README.md). In our case, we want to access web-1, which has a private IP of `192.168.25.54`. To connect, run `ssh $cwdc-username@192.168.25.54 -J jump@cwdc.scs.carleton.ca,$mc1username@access.scs.carleton.ca`. Again, replace `$mc1username` with your mc1 username, and replace `$cwdc-username` with the username given to you by your CWDC admin.
+Next, we can try to connect via the CWDC jump host. See the table under [network topology](../../README.md). In our case, we want to access web-1, To connect, run `ssh $cwdc-username@web-1 -J jump@cwdc.scs.carleton.ca,$mc1username@access.scs.carleton.ca`. Again, replace `$mc1username` with your mc1 username, and replace `$cwdc-username` with the username given to you by your CWDC admin.
 
 That will do the following things:
  - Connect to the SCS Access gateway. (You must put your password you found in the first step, in here)

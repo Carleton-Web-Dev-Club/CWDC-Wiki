@@ -48,7 +48,11 @@ Within openstack, we currently have 8 different VMs allocated.
     <td>-</td>
     <td>192.168.25.70</td>
 </tr>
-
+<tr>
+    <td>web-6</td>
+    <td>-</td>
+    <td>-</td>
+</tr>
 
 </table>
 The entry point for the network is our proxy server (`reverse-proxy`). This terminates HTTP2 TLS connections from the broad internet, and passes them onto our other hosts. It also serves as a ssh jump server to allow connections to the other different VMs in the network.
@@ -85,3 +89,5 @@ This must be configured by the system admin, in the file `/etc/webhook.conf`. Th
 - Secrets configured for webhooks can currently be seen by all users of the system
 
 A webhook stub script can be downloaded from any of the hosts by running `sftp files@reverse-proxy:webhook.sh .`
+### Pre-configured Proxies
+In addition to being able to ask an admin for a specific project path, there are some preconfigured routes you can use to test. Visiting https://cwdc.scs.carleton.ca/tmp-proxy/&lt;host&gt;/&lt;port&gt;/ will forward to the specific port on the specified host. Note that for security reasons, only a small range of ports will work this way, from 2932-2999.
