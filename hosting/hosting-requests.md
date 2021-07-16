@@ -2,11 +2,13 @@
 To have your site on one of the hosts show up on the cwdc domain, you will need to submit a proxy request. This page describes what information you should include with the request
 
 <table>
-    <tr>
-        <th>information</th>
-        <th>example<th>
-        <th>notes<th>
-    </tr>
+    <header>
+        <tr>
+            <th>information</th>
+            <th>example<th>
+            <th>notes<th>
+        </tr>
+    </header>
     <tr>
         <td>Your Name</td>
         <td>John Doe</td>
@@ -23,9 +25,9 @@ To have your site on one of the hosts show up on the cwdc domain, you will need 
         <td></td>
     </tr>
     <tr>
-        <td>Service</td>
-        <td>proxy</td>
-        <td>dynamic and/or static</td>
+        <td>My Project has a</td>
+        <td>backend + frontend</td>
+        <td>backend and/or frontend, and/or background service</td>
     </tr>
     <tr>
         <td>Github page</td>
@@ -34,7 +36,7 @@ To have your site on one of the hosts show up on the cwdc domain, you will need 
     </tr>
 </table>
 
-For dynamic services, ie ones with a constant running back end, please include the following information.
+For projects with a back end, please include the following information.
 <table>
     <tr>
         <th>information</th>
@@ -42,9 +44,9 @@ For dynamic services, ie ones with a constant running back end, please include t
         <th>notes<th>
     </tr>
     <tr>
-        <td>Proxy Mode</td>
-        <td></td>
-        <td></td>
+        <td>Proxy Settings</td>
+        <td>Proxy Path Ending, X-Forwarded-Path</td>
+        <td>See <a href="proxy-modes.md">Proxy Modes</a></td>
     </tr>
     <tr>
         <td># of ports</td>
@@ -52,15 +54,14 @@ For dynamic services, ie ones with a constant running back end, please include t
         <td>Can include preferred port as well</td>
     </tr>
     <tr>
-        <td>Globally Installed Software</td>
-        <td>node, npm</td>
+        <td>Required Software</td>
+        <td>node>=12.0, npm, openssl</td>
         <td></td>
     </tr>
     <tr>
-        <td>Database connections</td>
+        <td>Database required</td>
         <td>mongodb</td>
         <td></td>
     </tr>
 </table>
 
-For static files, please include the following information,
