@@ -7,6 +7,8 @@ The CWDC has obtained resources on Carleton University's Openstack Cluster. We c
 - [Request](./hosting-requests.md) access to the CWDC network
 - Connect ([SCS students](./tutorials/ssh-access/ssh-config(scs).md), [Non-SCS students](./tutorials/ssh-access/ssh-config(non-scs).md)) access to the CWDC network
 - Deploy Your Site
+  - Configure [Github Deploy Keys](./tutorials/git-deploy-keys.md)
+  - Configure it to run automatically (Systemd user unit)
 
 
 ## Server Configuration
