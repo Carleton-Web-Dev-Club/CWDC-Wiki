@@ -8,6 +8,8 @@
 
 [Back-End](/Back-End-Resources.md)
 
+[Hosting](/hosting/README.md)
+
 [General](./General-Resources.md)
 
 [Useful APIs](./Useful-APIs.md)
