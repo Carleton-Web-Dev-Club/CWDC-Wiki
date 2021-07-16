@@ -3,15 +3,17 @@ As many of the servers are unavailable from the public internet, we need to dete
 
 The path in this tutorial is: `your computer -> SCS access gateway -> CWDC Proxy gateway -> web-1`
 
+If you are a not member of the SCS, please instead follow the guide for [non SCS students](./ssh-config(non-scs).md)
+
 ## Setting Up
 ### Creating Accounts
-First, we need all the relevant accounts. Use the [SCS account creation tool](https://newacct.scs.carleton.ca/scs_authentication/newacct-policy-form.php) to get started.
+First, you need all the relevant accounts. Use the [SCS account creation tool](https://newacct.scs.carleton.ca/scs_authentication/newacct-policy-form.php) to get started.
 
 ### Finding a SSH Client
-Second, we need to ensure we have an openssh client. Linux and Mac systems should have one preinstalled, and windows users may have to follow [this guide to enable the feature](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse).
+Second, you need to ensure you have an openssh client. Linux and Mac systems should have one preinstalled, and windows users may have to follow [this guide to enable the feature](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse).
 
 ### Verifying an ssh client is installed
-Third, we need to open up a terminal. Windows users should open up powershell.
+Third, you need to open up a terminal. Windows users should open up powershell.
 
 Verify that typing `ssh` shows some text about usage.
 
@@ -20,7 +22,7 @@ Verify that typing `ssh` shows some text about usage.
 First, try to connect to the SCS access gateway. This is our way into the carleton network. Run `ssh $mc1username@scs.access.carleton.ca`, replacing `$mc1username` with your mc1 username. The password will be either your mc1 one, or whatever you set while creating your scs account.
 
 ### Connecting to CWDC Servers
-Next, we can try to connect via the CWDC jump host. See the table under [network topology](../../README.md). In our case, we want to access web-1, To connect, run `ssh $cwdc-username@web-1 -J jump@cwdc.scs.carleton.ca,$mc1username@access.scs.carleton.ca`. Again, replace `$mc1username` with your mc1 username, and replace `$cwdc-username` with the username given to you by your CWDC admin.
+Next, you can try to connect via the CWDC jump host. See the table under [network topology](../../README.md). In our case, we want to access web-1, To connect, run `ssh $cwdc-username@web-1 -J jump@cwdc.scs.carleton.ca,$mc1username@access.scs.carleton.ca`. Again, replace `$mc1username` with your mc1 username, and replace `$cwdc-username` with the username given to you by your CWDC admin.
 
 That will do the following things:
  - Connect to the SCS Access gateway. (You must put your password you found in the first step, in here)
@@ -33,26 +35,27 @@ That will do the following things:
 Remembering that command is a pain, but thankfully openssh provides a way to condense all of that into a much simpler command, a single config file.
 
 ### Creating ~/.ssh
-First, run `ssh-keygen` as described [below](#creating-the-key). This is not strictly required for this step, but it does do some of the work we would have to do manually. 
+First, run `ssh-keygen` as described [below](#creating-the-key). This is not strictly required for this step, but it does do some of the work you would have to do manually. 
 
 ### Finding ~/.ssh
 Go to your home folder, `~` on mac and linux, `%userprofile%` on windows. You may have to change a setting to view hidden folders. If on windows, it is recommended that you change the setting to have it show file extensions as well.
 
 You will see a folder name `.ssh`, open it. Create a file called `config`. Not `config.txt`, or anything else. Just a file named config. 
 ### Adding the OpenSSH Config
-Copy the contents of this file into it, replacing the variables as we did before. ([windows](https://cwdc.scs.carleton.ca/shared/ssh-config-windows.txt),[mac/linux](https://cwdc.scs.carleton.ca/shared/ssh-config-linux.txt)).
+Copy the contents of this file into it, replacing the variables as you did before. ([windows](https://cwdc.scs.carleton.ca/shared/ssh-config-windows.txt),[mac/linux](https://cwdc.scs.carleton.ca/shared/ssh-config-linux.txt)).
 
 ### Testing Config
 To test, you can attempt to log into your assigned host. `cwdc-rp` represents the `reverse-proxy` host, `cwdc-db` represents the `db-host` host, and `cwdc-web-X` represents the `web-X` hosts. To log into `web-1`, all you have to do is run `ssh cwdc-web-1`. This should ask you first for your scs unix account password, then your CWDC password given to by your admin. Enter these, and you should be logged in.
 
 ## Passwordless login with Public Keys
-Instead of using password, we can use public key authentication, where we create a file, a private key, and a public key that is mathematically computed from the private key. After having a logged in user add our public key as a login option, we can use our private key to prove to the ssh server that we created the public key, and that we should be allowed to log in.  
+Instead of using password, you can use public key authentication, where you create a file, a private key, and a public key that is mathematically computed from the private key. After having a logged in user add your public key as a login option, you can use your private key to prove to the ssh server that you created the public key, and that you should be allowed to log in.  
 
 ### Creating the key
-Run `ssh-keygen`. Accepting the default values is good enough for everything. (Note that this can overwrite `~/.ssh/id_rsa`, which you *may* have set up for git or otherwise. If so, skip this step). It will ask you for a password. **This is different from the password used to login to the remote system.**. This tutorial, and all others, will assume you left it blank. If you didn't, it will ask for a passphrase to unlock key at certain points. That will be the same password you enter here.
+Run `ssh-keygen` on your host. Accepting the default values is good enough for everything. (Note that this can overwrite `~/.ssh/id_rsa`, which you *may* have set up for git or otherwise. If so, skip this step). It will ask you for a password. **This is different from the password used to login to the remote system.**. This tutorial, and all others, will assume you left it blank. If you didn't, it will ask for a passphrase to unlock key at certain points. That will be the same password you enter here.
 
+**The private key file created (`~/.ssh/id_rsa`) should never be shared with anyone. Sharing this file is akin to giving someone your password. The public key file (`~/.ssh/id_rsa.pub`) can be shared to anyone**
 ### Copying The Key
-While there is a way to automate this using the `ssh-copy-id` program, it may not work as expected on windows systems, so we will do it the manual way.
+While there is a way to automate this using the `ssh-copy-id` program, it may not work as expected on windows systems, so you will do it the manual way.
 
 In the terminal on your own system, run `Get-Content ~/.ssh/id_rsa.pub` on windows, or `cat ~/.ssh/id_rsa.pub` on anything else. Copy the output. To copy from terminal, you may need to select it, then right click, press ctrl+shift+c, or something else. It will look like this
 ```
@@ -71,15 +74,15 @@ Paste in the key you copied before. If it all pasted, Press ctrl+X, then Y. If n
 Afterwards, press ctrl+d to log out of the SCS Access host, and get back to your computer's terminal.
 
 ### Testing passwordless login to the SCS Access Gateway
-On your own computer, run `ssh scs-access`. Now that we have the public key added, if should no longer ask for a password. Press ctrl+d, or type logout and hit enter, to logout
+On your own computer, run `ssh scs-access`. Now that you have the public key added, it should no longer ask for a password. Press ctrl+d, or type logout and hit enter, to logout
 
 ### Adding the key to CWDC servers
-Now we need to log into our designated CWDC server. Assuming we were given access to `web-1`, the command is `ssh cwdc-web-1`. You should only need to enter the password given to you by the cwdc openstack admin.
+Now you need to log into your designated CWDC server, from your own computer. Assuming you were given access to `web-1`, the command to run is `ssh cwdc-web-1`. You should only need to enter the password given to you by the cwdc openstack admin.
 
 Repeat the 4 commands in the [above](#adding-the-key-to-the-scs-access-gateway). Again, save and exit. Then logout of the server.
 
 ### Testing passwordless login to CWDC servers
-Try logging into your cwdc server. `ssh cwdc-web-1`. You should be dropped right into the terminal, no need to enter any passwords.
+Try logging into your cwdc server. Run `ssh cwdc-web-1` on your own computer. You should be dropped right into the terminal, no need to enter any passwords.
 
 
 

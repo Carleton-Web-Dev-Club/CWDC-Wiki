@@ -3,6 +3,11 @@
 ## About
 The CWDC has obtained resources on Carleton University's Openstack Cluster. We can use these resources to host projects for CWDC members. We also have DNS records configured for [cwdc.scs.carleton.ca](https://cwdc.scs.carleton.ca), and use that domain to showcase our work on the broader internet
 
+## How to get Started
+- [Request](./hosting-requests.md) access to the CWDC network
+- Connect ([SCS students](./tutorials/ssh-access/ssh-config(scs).md), [Non-SCS students](./tutorials/ssh-access/ssh-config(non-scs).md)) access to the CWDC network
+- Deploy Your Site
+
 
 ## Server Configuration
 ### Topology
@@ -89,5 +94,6 @@ This must be configured by the system admin, in the file `/etc/webhook.conf`. Th
 - Secrets configured for webhooks can currently be seen by all users of the system
 
 A webhook stub script can be downloaded from any of the hosts by running `sftp files@reverse-proxy:webhook.sh .`
+
 ### Pre-configured Proxies
-In addition to being able to ask an admin for a specific project path, there are some preconfigured routes you can use to test. Visiting https://cwdc.scs.carleton.ca/tmp-proxy/&lt;host&gt;/&lt;port&gt;/ will forward to the specific port on the specified host. Note that for security reasons, only a small range of ports will work this way, from 2932-2999.
+In addition to being able to ask an admin for a specific project path, there are some preconfigured routes you can use to test. Visiting https://cwdc.scs.carleton.ca/tmp-proxy/&lt;host&gt;/&lt;port&gt;/ will forward to the specific port on the specified host. Note that for security reasons, only a small range of ports will work this way, from 2932-2999. These are configured with thee [Proxy Path Ending mode](./proxy-modes.md#proxy-path-rnding)
